@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+COPY build_ca.exp
+
 RUN apt update \
         && apt install -y wget expect \
         && wget https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.3/EasyRSA-3.0.3.tgz \
