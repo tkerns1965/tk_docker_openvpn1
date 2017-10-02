@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM img_tkdovpn1_base:latest
 
 COPY build_ca.exp
 
