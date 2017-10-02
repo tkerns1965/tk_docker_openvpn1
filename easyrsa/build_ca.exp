@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+
+PASS_PHRASE=$1
+COMMON_NAME=$2
+
+spawn ./easyrsa/easyrsa build-ca
+match_max 100000
+expect -exact "Enter PEM pass phrase:"
+send -- "$PASS_PHRASE\r"
+expect -exact "\r
+Verifying - Enter PEM pass phrase:"
+send -- "$PASS_PHRASE\r"
+expect -exact "Common Name (eg: your user, host, or server name) \[Easy-RSA CA\]:"
+send -- "$COMMON_NAME\r"
+expect eof
