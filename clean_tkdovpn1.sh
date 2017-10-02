@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker rm cnt_tkdovpn1_easyrsa cnt_tkdovpn1_server cnt_tkdovpn1_client
+docker volume rm vol_tkdovpn1_data
+docker rmi img_tkdovpn1_easyrsa_base img_tkdovpn1_easyrsa img_tkdovpn1_openvpn_base img_tkdovpn1_server img_tkdovpn1_client
