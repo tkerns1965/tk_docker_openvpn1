@@ -19,4 +19,4 @@ send -- "$COMMON_NAME\r"
 
 expect eof
 
-file copy /etc/easyrsa/pki/ca.crt /tkdovpn1/data/ca/
+file copy /etc/easyrsa/pki/ca.crt /tkdovpn1/data/ca/ca.crt
