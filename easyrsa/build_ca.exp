@@ -6,7 +6,7 @@ set COMMON_NAME [lindex $argv 1]
 if { "$PASS_PHRASE" == "" } {
   puts "No pass phrase specified."
   exit 1
-} elif { "$COMMON_NAME" == "" } {
+} elseif { "$COMMON_NAME" == "" } {
   puts "No common name specified."
   exit 2
 }
