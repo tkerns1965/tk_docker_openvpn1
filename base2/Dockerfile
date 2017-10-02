@@ -1,1 +1,1 @@
-
+FROM img_tkdovpn1_base1:latest
