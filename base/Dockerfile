@@ -6,5 +6,3 @@ RUN apt update \
         && tar zxvf EasyRSA-3.0.3.tgz --transform 's!^EasyRSA-3.0.3!etc/easyrsa!' \
         && cd /etc/easyrsa/ \
         && ./easyrsa init-pki
-# \
-        # && ./easyrsa build-ca
