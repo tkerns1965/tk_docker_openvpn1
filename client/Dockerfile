@@ -1,4 +1,4 @@
-FROM img_tkdovpn_base:latest
+FROM img_tkdovpn1_base:latest
 
 COPY build_client_csr.sh .
 COPY install_client_crt.sh .
