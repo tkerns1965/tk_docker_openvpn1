@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# docker volume create vol_tkdovpn_certs
+docker volume create vol_tkdovpn1_certs
 cd ./easyrsa/
 docker build -t img_tkdovpn1_easyrsa .
 cd ../server/
