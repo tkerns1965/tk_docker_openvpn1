@@ -3,6 +3,14 @@
 PASS_PHRASE=$1
 COMMON_NAME=$2
 
+if [ -z "$PASS_PHRASE" ]; then
+  echo "No pass phrase specified."
+  exit 1
+elif [ -z "$COMMON_NAME" ]; then
+  echo "No common name specified."
+  exit 2
+fi
+
 spawn ./easyrsa/easyrsa build-ca
 match_max 100000
 expect -exact "Enter PEM pass phrase:"
