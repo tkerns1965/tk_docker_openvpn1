@@ -11,7 +11,7 @@ if { "$PASS_PHRASE" == "" } {
   exit 2
 }
 
-spawn ./easyrsa/easyrsa build-ca
+spawn ./etc/easyrsa/easyrsa build-ca
 match_max 100000
 expect -exact "Enter PEM pass phrase:"
 send -- "$PASS_PHRASE\r"
