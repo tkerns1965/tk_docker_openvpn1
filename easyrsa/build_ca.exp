@@ -1,15 +1,15 @@
 #!/usr/bin/expect
 
-PASS_PHRASE=$1
-COMMON_NAME=$2
+set PASS_PHRASE [lindex $argv 0]
+set COMMON_NAME [lindex $argv 1]
 
-if [ -z "$PASS_PHRASE" ]; then
-  echo "No pass phrase specified."
+if { "$PASS_PHRASE" == "" } {
+  puts "No pass phrase specified."
   exit 1
-elif [ -z "$COMMON_NAME" ]; then
-  echo "No common name specified."
+} elif { "$COMMON_NAME" == "" } {
+  puts "No common name specified."
   exit 2
-fi
+}
 
 spawn ./easyrsa/easyrsa build-ca
 match_max 100000
