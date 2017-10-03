@@ -21,4 +21,5 @@ send -- "$PASS_PHRASE\r"
 
 expect eof
 
-file copy /etc/easyrsa/pki/issued/$COMMON_NAME.crt /client_pki/reqs/$COMMON_NAME.crt
+file copy /etc/easyrsa/pki/ca.crt /client_pki/ca.crt
+file copy /etc/easyrsa/pki/issued/$COMMON_NAME.crt /client_pki/$COMMON_NAME.crt
