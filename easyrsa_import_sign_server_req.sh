@@ -12,4 +12,4 @@ elif [ -z "$PASS_PHRASE" ]; then
 fi
 
 docker run --mount src=vol_ca_pki,dst=/etc/easyrsa/pki --mount src=vol_server_pki,dst=/server_pki --rm \
-  img_tkdovpn1_easyrsa ./install_sign_server_req.exp $COMMON_NAME $PASS_PHRASE
+  img_tkdovpn1_easyrsa ./import_sign_server_req.exp $COMMON_NAME $PASS_PHRASE
