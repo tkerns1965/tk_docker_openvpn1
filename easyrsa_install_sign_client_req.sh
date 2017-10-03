@@ -11,5 +11,5 @@ elif [ -z "$PASS_PHRASE" ]; then
   exit 1
 fi
 
-docker run --mount src=vol_ca_pki,dst=/etc/easyrsa/pki --mount src=vol_client_pki,dst=/etc/easyrsa/pki --rm \
+docker run --mount src=vol_ca_pki,dst=/etc/easyrsa/pki --mount src=vol_client_pki,dst=/client_pki --rm \
   img_tkdovpn1_easyrsa ./install_sign_client_req.exp $COMMON_NAME $PASS_PHRASE
