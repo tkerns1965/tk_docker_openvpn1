@@ -5,7 +5,7 @@ set PASS_PHRASE [lindex $argv 1]
 
 cd /etc/easyrsa/
 
-spawn ./easyrsa gen-req $COMMON_NAME
+spawn bash ./easyrsa gen-req $COMMON_NAME
 match_max 100000
 
 expect -exact "Enter PEM pass phrase:"
