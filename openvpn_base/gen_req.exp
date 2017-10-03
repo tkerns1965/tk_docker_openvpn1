@@ -21,4 +21,4 @@ send -- "\r"
 expect eof
 
 file mkdir /tkdovpn1/data/$COMMON_NAME
-file copy /etc/easyrsa/pki/reqs/$COMMON_NAME.crt /tkdovpn1/data/$COMMON_NAME/$COMMON_NAME.crt
+file copy /etc/easyrsa/pki/reqs/$COMMON_NAME.req /tkdovpn1/data/$COMMON_NAME/$COMMON_NAME.req
