@@ -2,4 +2,5 @@
 
 docker rm cnt_tkdovpn1_easyrsa cnt_tkdovpn1_server cnt_tkdovpn1_client
 docker volume rm vol_ca_pki vol_server_pki vol_client_pki
+docker network rm net_tkdovpn1_bridge
 docker rmi img_tkdovpn1_easyrsa_base img_tkdovpn1_easyrsa img_tkdovpn1_openvpn_base img_tkdovpn1_server img_tkdovpn1_client
