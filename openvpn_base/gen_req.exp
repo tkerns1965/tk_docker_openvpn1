@@ -1,7 +1,7 @@
 #!/usr/bin/expect
 
-set PASS_PHRASE [lindex $argv 0]
-set COMMON_NAME [lindex $argv 1]
+set COMMON_NAME [lindex $argv 0]
+set PASS_PHRASE [lindex $argv 1]
 
 cd /etc/easyrsa/
 
@@ -20,5 +20,5 @@ send -- "\r"
 
 expect eof
 
-file mkdir /tkdovpn1/data/ca
-file copy /etc/easyrsa/pki/ca.crt /tkdovpn1/data/ca/ca.crt
+file mkdir /tkdovpn1/data/$COMMON_NAME
+file copy /etc/easyrsa/pki/reqs/$COMMON_NAME.crt /tkdovpn1/data/$COMMON_NAME/$COMMON_NAME.crt
