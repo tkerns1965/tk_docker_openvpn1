@@ -11,3 +11,5 @@ docker build -t img_tkdovpn1_server .
 cd ../client/
 docker build -t img_tkdovpn1_client .
 cd ../
+
+docker network create --driver bridge net_tkdovpn1_bridge
