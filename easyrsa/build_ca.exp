@@ -18,6 +18,3 @@ expect -exact "Common Name (eg: your user, host, or server name) \[Easy-RSA CA\]
 send -- "$COMMON_NAME\r"
 
 expect eof
-
-file mkdir /tkdovpn1/data/ca
-file copy /etc/easyrsa/pki/ca.crt /tkdovpn1/data/ca/ca.crt
