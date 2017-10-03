@@ -5,12 +5,12 @@ set PASS_PHRASE [lindex $argv 1]
 
 cd /etc/easyrsa/
 
-spawn ./easyrsa import-req /client_pki/reqs/$COMMON_NAME.req $COMMON_NAME
+spawn bash ./easyrsa import-req /client_pki/reqs/$COMMON_NAME.req $COMMON_NAME
 match_max 100000
 
 expect eof
 
-spawn ./easyrsa sign-req client $COMMON_NAME
+spawn bash ./easyrsa sign-req client $COMMON_NAME
 match_max 100000
 
 expect -exact "Confirm request details:"
