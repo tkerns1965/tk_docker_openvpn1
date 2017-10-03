@@ -5,7 +5,7 @@ set PASS_PHRASE [lindex $argv 1]
 
 cd /etc/easyrsa/
 
-spawn ./easyrsa build-ca
+spawn bash ./easyrsa build-ca
 match_max 100000
 
 expect -exact "Enter PEM pass phrase:"
