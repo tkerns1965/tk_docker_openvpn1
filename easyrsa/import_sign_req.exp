@@ -5,19 +5,20 @@ set PASS_PHRASE [lindex $argv 1]
 
 cd /etc/easyrsa/
 
-spawn ./easyrsa build-ca
+spawn ./easyrsa import-req /server/reqs/$COMMON_NAME.req $COMMON_NAME
 match_max 100000
-
-expect -exact "Enter PEM pass phrase:"
-send -- "$PASS_PHRASE\r"
-
-expect -exact "Verifying - Enter PEM pass phrase:"
-send -- "$PASS_PHRASE\r"
-
-expect -exact "Common Name (eg: your user, host, or server name) \[Easy-RSA CA\]:"
-send -- "$COMMON_NAME\r"
 
 expect eof
 
-file mkdir /tkdovpn1/data/ca
-file copy /etc/easyrsa/pki/ca.crt /tkdovpn1/data/ca/ca.crt
+spawn ./easyrsa sign-req server $COMMON_NAME
+match_max 100000
+
+expect -exact "Confirm request details:"
+send -- "yes\r"
+
+expect -exact "Enter pass phrase for /etc/easyrsa/pki/private/ca.key:"
+send -- "$PASS_PHRASE\r"
+
+expect eof
+
+file copy /etc/easyrsa/pki/issued/$COMMON_NAME.crt /server/reqs/$COMMON_NAME.crt
