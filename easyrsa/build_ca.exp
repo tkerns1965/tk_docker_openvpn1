@@ -1,7 +1,7 @@
 #!/usr/bin/expect
 
-set PASS_PHRASE [lindex $argv 0]
-set COMMON_NAME [lindex $argv 1]
+set COMMON_NAME [lindex $argv 0]
+set PASS_PHRASE [lindex $argv 1]
 
 cd /etc/easyrsa/
 
