@@ -11,4 +11,3 @@ expect -exact "Enter Private Key Password:"
 send -- "$PK_PASSWORD\r"
 
 # expect eof
-disconnect
