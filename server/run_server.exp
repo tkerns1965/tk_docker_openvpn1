@@ -10,4 +10,5 @@ match_max 100000
 expect -exact "Enter Private Key Password:"
 send -- "$PK_PASSWORD\r"
 
-expect eof
+# expect eof
+disconnect
