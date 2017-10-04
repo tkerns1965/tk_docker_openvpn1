@@ -1,0 +1,13 @@
+#!/usr/bin/expect
+
+set PK_PASSWORD [lindex $argv 0]
+
+cd /etc/easyrsa/
+
+spawn bash openvpn --cd /etc/openvpn/ --config server.conf
+match_max 100000
+
+expect -exact "Enter Private Key Password:"
+send -- "$PK_PASSWORD\r"
+
+expect eof
